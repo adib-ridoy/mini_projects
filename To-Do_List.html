@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .fortune-box { border: 2px solid black; padding: 20px; margin: 20px auto; width: 50%; }
+        .stopwatch { margin: 20px; font-size: 2em; }
+        .todo-container { margin: 20px; }
+        .todo-item { display: flex; justify-content: space-between; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Assignment</h1>
+    
+    
+    
+    <!-- To-Do List -->
+    <div class="todo-container">
+        <input type="text" id="todoInput" placeholder="Enter task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="todoList"></ul>
+    </div>
+    
+    <script>
+        
+        
+        // To-Do List
+        function loadTasks() { 
+            document.getElementById("todoList").innerHTML = localStorage.getItem("tasks") || ""; 
+        }
+        function addTask() {
+            let taskText = document.getElementById("todoInput").value;
+            if (taskText) { 
+                let li = document.createElement("li"); 
+                li.className = "todo-item"; 
+                li.innerHTML = `<input type="checkbox"><span>${taskText}</span> <button onclick="removeTask(this)">Delete</button>`; 
+                document.getElementById("todoList").appendChild(li); 
+                localStorage.setItem("tasks", document.getElementById("todoList").innerHTML); 
+                document.getElementById("todoInput").value = ""; 
+            } 
+        }
+        function removeTask(el) { 
+            el.parentElement.remove(); localStorage.setItem("tasks", document.getElementById("todoList").innerHTML); 
+        }
+        window.onload = loadTasks;
+    </script>
+</body>
+</html>

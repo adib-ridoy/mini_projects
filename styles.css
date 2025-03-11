@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#fortune-box {
+    border: 2px solid #000;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    background-color: #fff;
+}
+
+#color-buttons button {
+    margin: 5px;
+}
+
+#stopwatch, #todo-list {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
