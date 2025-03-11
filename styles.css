@@ -22,8 +22,3 @@ body {
     background-color: #fff;
     border-radius: 5px;
 }
-
-#task-list {
-    list-style-type: none;
-    padding: 0;
-}
